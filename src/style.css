@@ -1,8 +1,43 @@
-@import url("https://fonts.googleapis.com/css2?family=Combo&family=Poppins&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Combo&family=Poppins&display=swap');
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
+}
+
+.btn {
+  border: 2px solid black;
+}
+
+.meal-img {
+  width: 100%;
+  height: 30vh;
+}
+
+.meals {
+  display: flex;
+  column-gap: 15%;
+  flex-wrap: wrap;
+  height: 100%;
+  width: 100%;
+  row-gap: 20px;
+}
+
+.meal-container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+
+.like-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.like {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
