@@ -1,4 +1,6 @@
+import { calMeals } from './calmeals.js';
 const meals = document.querySelector('.meals');
+const mealsCounter = document.querySelector('.meals-counter');
 
 const ui = (data, likeNbrs = []) => {
   meals.innerHTML = '';
@@ -50,6 +52,8 @@ const ui = (data, likeNbrs = []) => {
       meals.appendChild(li);
     }
   });
+
+  mealsCounter.innerHTML = `Meals(${calMeals()})`;
 };
 
 export default ui;

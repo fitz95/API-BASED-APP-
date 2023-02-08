@@ -10,10 +10,11 @@ meals.addEventListener('click', async (e) => {
   // trash icon
   if (e.target.closest('.like-icon')) {
     const likeText = e.target.closest('.like-icon').nextElementSibling;
+    const likeIcon = e.target.closest('.like-icon');
     const { id } = likeText;
-    const createLike = await addLike(id);
-    while (createLike.type !== 'cors');
-    const likeVal = await getLikes();
-    likeText.innerHTML = `${likeVal[id].likes} likes`;
+    addLike(id);
+    const likeNbr = parseInt(likeText.innerHTML) + 1;
+    likeText.innerHTML = `${likeNbr} likes`;
+    likeIcon.className = 'fa fa-heart';
   }
 });
