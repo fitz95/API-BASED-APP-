@@ -121,3 +121,49 @@ footer {
   flex-direction: column;
   align-items: center;
 }
+
+.popup {
+  display: none;
+  position: fixed;
+  background: #fff;
+  width: 100%;
+  height: 100%;
+  z-index: 200;
+  top: 0;
+  left: 0;
+}
+
+#popupclose {
+  float: right;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.popupcontent {
+  padding: 25px;
+  font-size: larger;
+  padding-left: 10%;
+  margin: auto;
+  text-align: center;
+}
+
+.detail-flex {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.instructions {
+  width: 60%;
+  margin: auto;
+  margin-bottom: 20px;
+}
+
+.img-large {
+  height: 25%;
+  width: 25%;
+}
+
+form-div {
+
+}

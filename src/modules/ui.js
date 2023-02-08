@@ -36,6 +36,7 @@ export const ui = (data) => {
 
       const comBtn = document.createElement('button');
       comBtn.className = 'comBtn';
+      comBtn.id = meal.idMeal
       comBtn.innerHTML = 'Comments';
 
       const resBtn = document.createElement('button');
@@ -50,3 +51,4 @@ export const ui = (data) => {
     }
   });
 };
+
