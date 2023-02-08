@@ -1,5 +1,5 @@
-import getMeals from './api.js';
+const API = require('./api.js');
 
 window.addEventListener('load', () => {
-  getMeals();
+  API.getMeals();
 });

@@ -1,8 +1,9 @@
 class Object {
-  constructor(name, startDate, endDate) {
-    this.name = name;
-    this.startDate = startDate;
-    this.endDate = endDate;
+  constructor(index, name, startDate, endDate) {
+    this.item_id = index;
+    this.username = name;
+    this.date_start = startDate;
+    this.date_end = endDate;
   }
 }
 
