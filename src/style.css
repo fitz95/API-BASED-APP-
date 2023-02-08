@@ -103,6 +103,7 @@ footer {
   height: 100%;
   width: 100%;
   row-gap: 20px;
+  justify-content: space-around;
 }
 
 .meal-container {
