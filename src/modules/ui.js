@@ -1,5 +1,3 @@
-// import { getLikes } from './api.js';
-
 const meals = document.querySelector('.meals');
 
 const ui = (data, likeNbrs = []) => {
@@ -25,7 +23,7 @@ const ui = (data, likeNbrs = []) => {
       const likeDiv = document.createElement('div');
       likeDiv.className = 'like';
       const heartIcon = document.createElement('i');
-      heartIcon.className = 'fa fa-heart';
+      heartIcon.className = 'fa fa-heart-o like-icon';
       const likeTxt = document.createElement('h7');
       likeTxt.className = 'like-txt';
       likeTxt.innerHTML = `${likeNbrs[index].likes} likes`;
