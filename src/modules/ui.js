@@ -1,6 +1,9 @@
+import { getLikes } from './api.js';
 const meals = document.querySelector('.meals');
 
-const ui = (data) => {
+export const ui = async (data) => {
+  const likeNbrs = await getLikes();
+
   meals.innerHTML = '';
   data.forEach((meal, index) => {
     if (index <= 5) {
@@ -26,7 +29,8 @@ const ui = (data) => {
       heartIcon.className = 'fa fa-heart';
       const likeTxt = document.createElement('h7');
       likeTxt.className = 'like-txt';
-      likeTxt.innerHTML = '5 likes';
+      likeTxt.innerHTML = `${likeNbrs[index].likes} likes`;
+      likeTxt.id = index;
 
       likeDiv.appendChild(heartIcon);
       likeDiv.appendChild(likeTxt);
@@ -50,5 +54,3 @@ const ui = (data) => {
     }
   });
 };
-
-export default ui;
