@@ -43,16 +43,6 @@ img {
   height: 100%;
 }
 
-footer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 10vh;
-  margin-top: 78vh;
-  border: 1px solid rgb(0, 0, 0);
-}
-
 header {
   display: flex;
   flex-direction: row;
@@ -81,6 +71,57 @@ img {
   height: 100%;
 }
 
+.popup-reservation-container {
+  display: none;
+  flex-direction: column;
+  background-color: white;
+  color: black;
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  padding: 1vh;
+  border: 2px solid rgb(0, 0, 0);
+}
+
+.reservation-container-appear {
+  display: flex;
+  align-items: center;
+}
+
+.reservation-page-close-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 95%;
+  font-size: large;
+  border: 1px solid black;
+  width: 5vh;
+  height: 5vh;
+  cursor: pointer;
+}
+
+.popup-reservation-img-div {
+  width: 60vh;
+  height: 40vh;
+}
+
+.reservations {
+  height: 18vh;
+  border: 1px solid rgb(2, 2, 2);
+}
+
+.popup-reservation-container form {
+  display: flex;
+  flex-direction: column;
+  width: 40vh;
+  margin-top: 2vh;
+}
+
+.popup-reservation-container form input {
+  margin-bottom: 2vh;
+  padding: 2.5px 0 2.5px 5px;
+}
+
 footer {
   display: flex;
   justify-content: center;
@@ -90,6 +131,8 @@ footer {
   margin-top: 78vh;
   border: 1px solid rgb(0, 0, 0);
 }
+
+/* js classes */
 
 .meal-img {
   width: 100%;

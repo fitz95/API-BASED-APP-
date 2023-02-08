@@ -1,4 +1,4 @@
-import { getMeals } from './api.js';
+import getMeals from './api.js';
 
 window.addEventListener('load', () => {
   getMeals();
