@@ -1,12 +1,11 @@
 const meals = document.querySelector('.meals');
 
-export const ui = (data) => {
+const ui = (data) => {
   meals.innerHTML = '';
   data.forEach((meal, index) => {
-    console.log(meal);
     if (index <= 5) {
       if (meal.strMeal.length > 25) {
-        meal.strMeal = meal.strMeal.substring(0, 15) + '...';
+        meal.strMeal = `${meal.strMeal.substring(0, 15)}...`;
       }
       const li = document.createElement('li');
       li.className = 'meal-container';
@@ -51,3 +50,5 @@ export const ui = (data) => {
     }
   });
 };
+
+export default ui;

@@ -1,8 +1,8 @@
-import { ui } from './ui.js';
-const urlAllMeals =
-  'https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood';
+import ui from './ui.js';
 
-export const getMeals = async () => {
+const urlAllMeals = 'https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood';
+
+const getMeals = async () => {
   const allMeals = await fetch(urlAllMeals, {
     method: 'Get',
   });
@@ -10,3 +10,5 @@ export const getMeals = async () => {
   ui(meals.meals);
   return meals;
 };
+
+export default getMeals;
