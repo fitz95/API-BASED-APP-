@@ -1,4 +1,5 @@
-import { calMeals } from './calmeals.js';
+import calMeals from './calmeals.js';
+
 const meals = document.querySelector('.meals');
 const mealsCounter = document.querySelector('.meals-counter');
 

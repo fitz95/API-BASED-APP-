@@ -1,4 +1,4 @@
-import { getMealsInfo, addLike, getLikes } from './api.js';
+import { getMealsInfo, addLike } from './api.js';
 
 const meals = document.querySelector('.meals');
 
@@ -13,7 +13,7 @@ meals.addEventListener('click', async (e) => {
     const likeIcon = e.target.closest('.like-icon');
     const { id } = likeText;
     addLike(id);
-    const likeNbr = parseInt(likeText.innerHTML) + 1;
+    const likeNbr = parseInt(likeText.innerHTML, 10) + 1;
     likeText.innerHTML = `${likeNbr} likes`;
     likeIcon.className = 'fa fa-heart';
   }

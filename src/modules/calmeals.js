@@ -1,2 +1,2 @@
-export const calMeals = () =>
-  document.querySelector('.meals').childElementCount;
+const calMeals = () => document.querySelector('.meals').childElementCount;
+export default calMeals;
