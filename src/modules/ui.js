@@ -1,9 +1,8 @@
-import { getLikes } from './api.js';
+// import { getLikes } from './api.js';
+
 const meals = document.querySelector('.meals');
 
-export const ui = async (data) => {
-  const likeNbrs = await getLikes();
-
+const ui = (data, likeNbrs = []) => {
   meals.innerHTML = '';
   data.forEach((meal, index) => {
     if (index <= 5) {
@@ -54,3 +53,5 @@ export const ui = async (data) => {
     }
   });
 };
+
+export default ui;
