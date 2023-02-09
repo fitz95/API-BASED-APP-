@@ -16,8 +16,5 @@ meals.addEventListener('click', async (e) => {
     const likeNbr = parseInt(likeText.innerHTML, 10) + 1;
     likeText.innerHTML = `${likeNbr} likes`;
     likeIcon.className = 'fa fa-heart';
-    // calculate comments
-    // const comment = await calReserve(ides[id]);
-    // console.log(Object.keys(comment).length);
   }
 });
