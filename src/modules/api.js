@@ -37,7 +37,7 @@ const getStrInstruction = async (id) => {
       method: 'Get',
     });
     const res = await reservation.json();
-    return res.meals[0].strInstructions;
+    return res.meals[0];
   } catch (error) {
     return error;
   }

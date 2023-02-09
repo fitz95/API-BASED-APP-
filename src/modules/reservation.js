@@ -2,11 +2,13 @@ import Object from './resObj.js';
 
 const API = require('./api.js');
 
-const popupRes = document.querySelector('.popup-reservation-container');
+const popupContainer = document.querySelector('.container');
 const resPageCloseBtn = document.querySelector('.reservation-page-close-btn');
 const popupResImgDiv = document.querySelector('.popup-reservation-img-div');
 const name = document.querySelector('.name');
 const instruction = document.querySelector('.instructions');
+const area = document.querySelector('.area');
+const category = document.querySelector('.category');
 const meals = document.querySelector('.meals');
 
 const element = (data) => {
@@ -49,14 +51,16 @@ meals.addEventListener('click', async (event) => {
     startDate.value = '';
     endDate.value = '';
     index = parseInt(event.target.parentElement.id, 10);
-    const instructions = await API.getStrInstruction(index);
+    const meals = await API.getStrInstruction(index);
     const ID = event.target.id;
-    popupRes.classList.add('reservation-container-appear');
+    popupContainer.classList.add('container-appear');
     const resPageImg = new Image();
     resPageImg.src = array[ID].strMealThumb;
     popupResImgDiv.innerHTML = '';
     popupResImgDiv.append(resPageImg);
-    instruction.innerHTML = instructions;
+    area.innerHTML = `Area: ${meals.strArea}`;
+    category.innerHTML = `Category: ${meals.strCategory}`;
+    instruction.innerHTML = meals.strInstructions;
     name.innerHTML = array[ID].strMeal;
     const reservation = await API.getReservations(index);
     element(reservation);
@@ -64,7 +68,7 @@ meals.addEventListener('click', async (event) => {
 });
 
 resPageCloseBtn.addEventListener('click', (() => {
-  popupRes.classList.remove('reservation-container-appear');
+  popupContainer.classList.remove('container-appear');
 }));
 
 document.querySelector('.form-btn').addEventListener('click', (async () => {
