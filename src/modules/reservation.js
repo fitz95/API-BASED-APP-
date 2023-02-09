@@ -33,6 +33,8 @@ const element = (data) => {
       div.append(startDate, endDate, name);
       document.querySelector('.reservations-div').appendChild(div);
     });
+  } else {
+    document.querySelector('.res-count').innerHTML = '(0)';
   }
 };
 
