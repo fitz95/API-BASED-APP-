@@ -2,7 +2,8 @@ import ui from './ui.js';
 
 const id = 'tKVlvnEbmf4TMWB77SE7';
 const urlMealrecipe = 'https://www.themealdb.com/api/json/v1/1/lookup.php?i=';
-const urlAllMeals = 'https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood';
+const urlAllMeals =
+  'https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood';
 const invApiUrl = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${id}/likes`;
 export const ides = ['52959', '52819', '52944', '53043', '52802', '52918'];
 
@@ -43,15 +44,6 @@ const addLike = async (index) => {
   }
 };
 
-const getMeals = async () => {
-  const allMeals = await fetch(urlAllMeals, {
-    method: 'Get',
-  });
-  const meals = await allMeals.json();
-  ui(meals.meals);
-  return meals;
-};
-
 const getRecipe = async (id) => {
   const url = urlMealrecipe + id;
   const comments = await fetch(url, {
@@ -66,12 +58,10 @@ const getComment = async (id) => {
     `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/tKVlvnEbmf4TMWB77SE7/comments?item_id=${id}`,
     {
       method: 'Get',
-    },
+    }
   );
   const commentsResponse = await comments.json();
   return commentsResponse;
 };
 
-export {
-  getMeals, getComment, getRecipe, getLikes, addLike, getMealsInfo,
-};
+export { getComment, getRecipe, getLikes, addLike, getMealsInfo };
