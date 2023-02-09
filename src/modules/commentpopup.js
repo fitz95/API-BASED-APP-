@@ -1,3 +1,5 @@
+// import commentDisplay from './commentdisplay.js';
+// import { getComment } from './api.js';
 const popupContent = document.querySelector('.popupcontent');
 const popup = document.getElementById('popup');
 const urlMealrecipe = 'https://www.themealdb.com/api/json/v1/1/lookup.php?i=';
@@ -80,7 +82,8 @@ const getRecipe = async (id) => {
   });
   // const displayedcomments = commentDisplay(id);
   // console.log(displayedcomments);
-  const commentUrl = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/tKVlvnEbmf4TMWB77SE7/comments?item_id=';
+  const commentUrl =
+    'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/tKVlvnEbmf4TMWB77SE7/comments?item_id=';
   const commentDisplay = async (id) => {
     const url = commentUrl + id;
     const response = await fetch(url, {
@@ -96,6 +99,8 @@ const getRecipe = async (id) => {
     subHeading.innerHTML = `Comments (${comments.length})`;
     commentsDiv.appendChild(div);
   };
+  commentDisplay(id);
+  subHeading.innerHTML = `Comments (${comments.length})`;
   commentDisplay(id);
   const commentPost = async () => {
     const response = await fetch(
@@ -113,7 +118,7 @@ const getRecipe = async (id) => {
           username: commentName.value,
           comment: commentText.value,
         }),
-      },
+      }
     );
     form.reset();
     return response;
@@ -127,5 +132,4 @@ const getRecipe = async (id) => {
     }
   });
 };
-
 export default getRecipe;

@@ -2,8 +2,6 @@ import { getComment, getMealsInfo, addLike } from './api.js';
 import getRecipe from './commentpopup.js';
 import commentDisplay from './commentdisplay.js';
 
-const meals = document.querySelector('.meals');
-
 window.addEventListener('load', () => {
   getMealsInfo();
 });
