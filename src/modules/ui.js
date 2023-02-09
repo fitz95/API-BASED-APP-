@@ -8,7 +8,7 @@ export const ui = async (data) => {
   data.forEach((meal, index) => {
     if (index <= 5) {
       if (meal.strMeal.length > 25) {
-        meal.strMeal = `${meal.strMeal.substring(0, 15)}...`;
+        meal.strMeal = `${meal.strMeal.substring(0, 14)}...`;
       }
       const li = document.createElement('li');
       li.className = 'meal-container';
