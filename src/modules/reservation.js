@@ -40,7 +40,7 @@ const listItem = (data) => {
   array = [...array, data];
 };
 
-document.querySelector('.form-btn').addEventListener('click', ((e) => {
+document.querySelector('.form-btn').addEventListener('click', (() => {
   const obj = new Object(nameInput.value, startDate.value, endDate.value);
   element(obj);
   listItem(obj);
