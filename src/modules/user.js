@@ -1,7 +1,10 @@
-import { getMealsInfo, addLike } from './api.js';
+import getRecipe from './commentpopup.js';
+import commentDisplay from './commentdisplay.js';
+import {
+  getMealsInfo, addLike, getComment,
+} from './api.js';
 
 const meals = document.querySelector('.meals');
-
 window.addEventListener('load', () => {
   getMealsInfo();
 });
@@ -16,5 +19,15 @@ meals.addEventListener('click', async (e) => {
     const likeNbr = parseInt(likeText.innerHTML, 10) + 1;
     likeText.innerHTML = `${likeNbr} likes`;
     likeIcon.className = 'fa fa-heart';
+  }
+});
+
+meals.addEventListener('click', (e) => {
+  if (e.target.closest('.comBtn')) {
+    const btn = e.target;
+    const { id } = btn;
+    getComment(id);
+    getRecipe(id);
+    commentDisplay(id);
   }
 });

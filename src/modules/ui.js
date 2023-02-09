@@ -2,7 +2,6 @@ import calMeals from './calmeals.js';
 
 const meals = document.querySelector('.meals');
 const mealsCounter = document.querySelector('.meals-counter');
-
 const ui = (data, likeNbrs = []) => {
   meals.innerHTML = '';
   data.forEach((meal, index) => {
@@ -41,6 +40,7 @@ const ui = (data, likeNbrs = []) => {
 
       const comBtn = document.createElement('button');
       comBtn.className = 'comBtn';
+      comBtn.id = meal.idMeal;
       comBtn.innerHTML = 'Comments';
 
       const resBtn = document.createElement('button');
