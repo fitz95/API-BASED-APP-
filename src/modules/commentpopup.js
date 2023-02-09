@@ -115,6 +115,7 @@ const getRecipe = async (id) => {
       }),
     });
     form.reset();
+    getRecipe(id);
     return response;
   };
 
@@ -122,7 +123,6 @@ const getRecipe = async (id) => {
     e.preventDefault();
     if (commentName.value !== '' || commentText.value !== '') {
       commentPost(id);
-      getRecipe(id);
     }
   });
 };
