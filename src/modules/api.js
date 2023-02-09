@@ -6,10 +6,14 @@ const invApiUrl = `https://us-central1-involvement-api.cloudfunctions.net/capsto
 export const ides = ['52959', '52819', '52944', '53043', '52802', '52918'];
 
 export const getLikes = async () => {
-  const allLikes = await fetch(invApiUrl, {
-    method: 'Get',
-  });
-  return allLikes.json();
+  try {
+    const allLikes = await fetch(invApiUrl, {
+      method: 'Get',
+    });
+    return allLikes.json();
+  } catch (error) {
+    return error;
+  }
 };
 
 export const getMealsInfo = async () => {
@@ -22,14 +26,18 @@ export const getMealsInfo = async () => {
 };
 
 export const addLike = async (index) => {
-  const userPost = await fetch(invApiUrl, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({
-      item_id: `${ides[index]}`,
-    }),
-  });
-  return userPost;
+  try {
+    const userPost = await fetch(invApiUrl, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        item_id: `${ides[index]}`,
+      }),
+    });
+    return userPost;
+  } catch (error) {
+    return error;
+  }
 };
