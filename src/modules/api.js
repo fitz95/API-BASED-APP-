@@ -109,7 +109,7 @@ const getRecipe = async (id) => {
   const comments = await fetch(url, {
     method: 'Get',
   });
-
+};
 
 export {
   getComment,
