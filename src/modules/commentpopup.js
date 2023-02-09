@@ -127,5 +127,4 @@ const getRecipe = async (id) => {
   });
 };
 
-
 export default getRecipe;

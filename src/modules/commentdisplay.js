@@ -14,5 +14,4 @@ const commentDisplay = async (id) => {
   return div;
 };
 
-
 export default commentDisplay;
