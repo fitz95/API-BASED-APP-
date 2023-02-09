@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Combo&family=Poppins&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Combo&family=Poppins&display=swap");
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 html {
@@ -15,12 +15,107 @@ body {
   height: 100vh;
 }
 
+img {
+  width: 100%;
+  height: 100%;
+}
+
+.container {
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  position: absolute;
+  position: fixed;
+}
+
+.container-appear {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-reservation-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgba(255, 255, 255, 0.961);
+  color: black;
+  padding: 1vh;
+  border: 2px solid rgb(0, 0, 0);
+  position: relative;
+  position: absolute;
+  position: fixed;
+  width: 90%;
+  height: 90vh;
+  margin: 1vh;
+  overflow-y: scroll;
+}
+
+.reservation-page-close-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 94%;
+  width: 5vh;
+  height: 5vh;
+  cursor: pointer;
+  position: absolute;
+}
+
+.popup-reservation-img-div {
+  width: 50vh;
+  height: 30vh;
+}
+
+.name-inst-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.area-category-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+p {
+  font-size: 15px;
+  width: 70vh;
+}
+
+.reservations-conatainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.reservations-div {
+  height: 11vh;
+  overflow-y: scroll;
+  border: 1px solid rgb(2, 2, 2);
+  padding: 0 0 0 10px;
+}
+
+.popup-reservation-container form {
+  display: flex;
+  flex-direction: column;
+  width: 40vh;
+  margin-top: 2vh;
+}
+
+.popup-reservation-container form input {
+  margin-bottom: 1vh;
+  padding: 2.5px 0 2.5px 5px;
+}
+
 header {
   display: flex;
   flex-direction: row;
   width: 100%;
   height: 10vh;
-  border: 1px solid rgb(0, 0, 0);
   align-items: center;
   cursor: pointer;
   font-size: x-large;
@@ -34,9 +129,13 @@ header {
   width: 10vh;
 }
 
-img {
-  width: 100%;
-  height: 100%;
+header span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 20vh;
+  cursor: pointer;
+  font-size: x-large;
 }
 
 footer {
@@ -49,20 +148,7 @@ footer {
   border: 1px solid rgb(0, 0, 0);
 }
 
-.meal-img {
-  width: 100%;
-  height: 30vh;
-}
-
-.meals {
-  display: flex;
-  column-gap: 15%;
-  flex-wrap: wrap;
-  height: 100%;
-  width: 100%;
-  row-gap: 20px;
-  justify-content: space-around;
-}
+/* js classes */
 
 .meal-container {
   display: flex;
@@ -79,6 +165,21 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.meal-img {
+  width: 100%;
+  height: 30vh;
+}
+
+.meals {
+  display: flex;
+  column-gap: 15%;
+  flex-wrap: wrap;
+  height: 100%;
+  width: 100%;
+  row-gap: 19px;
+  justify-content: space-around;
 }
 
 .popup {
@@ -137,16 +238,6 @@ footer {
 .img-large {
   height: 30vh;
   width: 60%;
-}
-
-input {
-  display: block;
-  width: 60%;
-  margin: auto;
-  margin-bottom: 15px;
-  height: 30px;
-  padding: 3px;
-  font-size: 18px;
 }
 
 .submitBtn {

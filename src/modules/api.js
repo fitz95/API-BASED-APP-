@@ -1,4 +1,5 @@
 import ui from './ui.js';
+import resBtn from './reservation.js';
 
 const id = 'tKVlvnEbmf4TMWB77SE7';
 const urlMealrecipe = 'https://www.themealdb.com/api/json/v1/1/lookup.php?i=';
@@ -71,6 +72,7 @@ const getMealsInfo = async () => {
   const likes = await getLikes();
   const meals = await allMeals.json();
   ui(meals.meals, likes);
+  resBtn(meals.meals);
 };
 
 const addLike = async (index) => {
