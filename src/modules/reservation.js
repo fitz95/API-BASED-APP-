@@ -41,7 +41,6 @@ const listItem = (data) => {
 };
 
 document.querySelector('.form-btn').addEventListener('click', ((e) => {
-  console.log(e.target.parentElement);
   const obj = new Object(nameInput.value, startDate.value, endDate.value);
   element(obj);
   listItem(obj);
