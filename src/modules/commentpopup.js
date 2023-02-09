@@ -1,3 +1,6 @@
+// import commentDisplay from './commentdisplay.js';
+// import { getComment } from './api.js';
+
 const popupContent = document.querySelector('.popupcontent');
 const popup = document.getElementById('popup');
 const urlMealrecipe = 'https://www.themealdb.com/api/json/v1/1/lookup.php?i=';
@@ -42,6 +45,9 @@ const getRecipe = async (id) => {
   subHeading.className = 'subheading';
   subHeading.innerHTML = 'Comments';
   popupContent.appendChild(subHeading);
+  const commentsDiv = document.createElement('div');
+  commentsDiv.id = 'commentDiv';
+  popupContent.appendChild(commentsDiv);
   const subHeading2 = document.createElement('h4');
   subHeading2.className = 'subheading2';
   subHeading2.innerHTML = 'Add A Comment';
@@ -71,11 +77,28 @@ const getRecipe = async (id) => {
   formDiv.appendChild(form);
   popupContent.appendChild(formDiv);
   popup.style.display = 'block';
-
   closeBtn.addEventListener('click', (e) => {
     e.preventDefault();
     popup.style.display = 'none';
   });
+  // const displayedcomments = commentDisplay(id);
+  // console.log(displayedcomments);
+  const commentUrl = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/tKVlvnEbmf4TMWB77SE7/comments?item_id=';
+  const commentDisplay = async (id) => {
+    const url = commentUrl + id;
+    const response = await fetch(url, {
+      method: 'Get',
+    });
+    const comments = await response.json();
+    const div = document.createElement('div');
+    comments.forEach((element) => {
+      const p = document.createElement('p');
+      p.innerHTML = `${element.creation_date}  ${element.username}: ${element.comment}`;
+      div.appendChild(p);
+    });
+    commentsDiv.appendChild(div);
+  };
+  commentDisplay(id);
 };
 
 export default getRecipe;
