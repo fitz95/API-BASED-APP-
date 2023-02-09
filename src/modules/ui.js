@@ -1,6 +1,9 @@
-const meals = document.querySelector('.meals');
+import calMeals from './calmeals.js';
 
-const ui = (data) => {
+const meals = document.querySelector('.meals');
+const mealsCounter = document.querySelector('.meals-counter');
+
+const ui = (data, likeNbrs = []) => {
   meals.innerHTML = '';
   data.forEach((meal, index) => {
     if (index <= 5) {
@@ -24,10 +27,11 @@ const ui = (data) => {
       const likeDiv = document.createElement('div');
       likeDiv.className = 'like';
       const heartIcon = document.createElement('i');
-      heartIcon.className = 'fa fa-heart';
+      heartIcon.className = 'fa fa-heart-o like-icon';
       const likeTxt = document.createElement('h7');
       likeTxt.className = 'like-txt';
-      likeTxt.innerHTML = '5 likes';
+      likeTxt.innerHTML = `${likeNbrs[index].likes} likes`;
+      likeTxt.id = index;
 
       likeDiv.appendChild(heartIcon);
       likeDiv.appendChild(likeTxt);
@@ -50,6 +54,8 @@ const ui = (data) => {
       meals.appendChild(li);
     }
   });
+
+  mealsCounter.innerHTML = `Meals(${calMeals()})`;
 };
 
 export default ui;
