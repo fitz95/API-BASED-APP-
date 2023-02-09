@@ -1,15 +1,82 @@
-:root {
-  --primary: #fc466b;
-  --light: #eee;
-  --dark: #313154;
-  --danger: #c9d3fd;
-  --grey: #888;
-  --shadow: 0 1px 3px rgba(211, 0, 0, 0.027);
-}
+@import url('https://fonts.googleapis.com/css2?family=Combo&family=Poppins&display=swap');
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+body {
+  height: 100vh;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 10vh;
+  border: 1px solid rgb(0, 0, 0);
+  align-items: center;
+  cursor: pointer;
+  font-size: x-large;
+  column-gap: 5%;
+  margin-bottom: 5%;
+}
+
+.meal-logo-div {
+  margin-left: 5vh;
+  height: 100%;
+  width: 10vh;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 10vh;
+  margin-top: 78vh;
+  border: 1px solid rgb(0, 0, 0);
+}
+
+.meal-img {
+  width: 100%;
+  height: 30vh;
+}
+
+.meals {
+  display: flex;
+  column-gap: 15%;
+  flex-wrap: wrap;
+  height: 100%;
+  width: 100%;
+  row-gap: 20px;
+  justify-content: space-around;
+}
+
+.meal-container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+
+.like-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.like {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
