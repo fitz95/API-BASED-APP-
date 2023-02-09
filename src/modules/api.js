@@ -93,15 +93,6 @@ const addLike = async (index) => {
   }
 };
 
-const getMeals = async () => {
-  const allMeals = await fetch(urlAllMeals, {
-    method: 'Get',
-  });
-  const meals = await allMeals.json();
-  ui(meals.meals);
-  return meals;
-};
-
 const getComment = async (id) => {
   const comments = await fetch(
     `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/tKVlvnEbmf4TMWB77SE7/comments?item_id=${id}`,
@@ -112,8 +103,6 @@ const getComment = async (id) => {
   const commentsResponse = await comments.json();
   return commentsResponse;
 };
-
-
 
 const getRecipe = async (id) => {
   const url = urlMealrecipe + id;
@@ -133,5 +122,4 @@ export {
   getMealsInfo,
   addLike,
   getLikes,
-  }
-
+};

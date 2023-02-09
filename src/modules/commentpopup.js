@@ -98,9 +98,7 @@ const getRecipe = async (id) => {
     commentsDiv.appendChild(div);
   };
   commentDisplay(id);
-};
-    subHeading.innerHTML = `Comments (${comments.length})`;
-  };
+  subHeading.innerHTML = `Comments (${comments.length})`;
   commentDisplay(id);
   const commentPost = async () => {
     const response = await fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/tKVlvnEbmf4TMWB77SE7/comments/', {
