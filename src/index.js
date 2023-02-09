@@ -1,4 +1,4 @@
 import './style.css';
 import './modules/user.js';
 import './modules/images.js';
-import './modules/reservation.js';
+import './modules/commentapi.js';
