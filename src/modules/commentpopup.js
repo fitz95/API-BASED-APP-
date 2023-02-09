@@ -37,7 +37,6 @@ const getRecipe = async (id) => {
   popupContent.appendChild(paragraph);
   const categoryP = document.createElement('p');
   categoryP.innerHTML = `Category:   ${meal.meals[0].strCategory}`;
-
   detailDiv.appendChild(areaP);
   detailDiv.appendChild(categoryP);
   const subHeading = document.createElement('h4');
@@ -59,13 +58,11 @@ const getRecipe = async (id) => {
   commentName.setAttribute('type', 'text');
   commentName.setAttribute('id', 'commentname');
   commentName.setAttribute('placeholder', 'Your Name');
-
   const commentText = document.createElement('input');
   commentText.setAttribute('type', 'textarea');
   commentText.setAttribute('id', 'commentsubject');
   commentText.setAttribute('placeholder', 'Your Insights');
   commentText.className = 'commentText';
-
   const submitBtn = document.createElement('input');
   submitBtn.setAttribute('type', 'submit');
   submitBtn.setAttribute('value', 'Submit');
@@ -95,9 +92,10 @@ const getRecipe = async (id) => {
       p.innerHTML = `${element.creation_date}  ${element.username}: ${element.comment}`;
       div.appendChild(p);
     });
-    subHeading.innerHTML = `Comments (${comments.length})`;
     commentsDiv.appendChild(div);
   };
+  commentDisplay(id);
+  subHeading.innerHTML = `Comments (${comments.length})`;
   commentDisplay(id);
   const commentPost = async () => {
     const response = await fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/tKVlvnEbmf4TMWB77SE7/comments/', {
@@ -118,7 +116,6 @@ const getRecipe = async (id) => {
     getRecipe(id);
     return response;
   };
-
   submitBtn.addEventListener('click', (e) => {
     e.preventDefault();
     if (commentName.value !== '' || commentText.value !== '') {
@@ -126,5 +123,4 @@ const getRecipe = async (id) => {
     }
   });
 };
-
 export default getRecipe;
