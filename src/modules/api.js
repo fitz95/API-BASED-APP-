@@ -109,6 +109,8 @@ const getRecipe = async (id) => {
   const comments = await fetch(url, {
     method: 'Get',
   });
+  const commentsResponse = await comments.json();
+  return commentsResponse;
 };
 
 export {
