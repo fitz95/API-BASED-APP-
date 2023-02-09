@@ -5,7 +5,6 @@ import commentDisplay from './commentdisplay.js';
 const meals = document.querySelector('.meals');
 window.addEventListener('load', () => {
   getMealsInfo();
-  getMeals();
 });
 
 meals.addEventListener('click', async (e) => {
