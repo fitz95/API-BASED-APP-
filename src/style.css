@@ -15,17 +15,15 @@ body {
   height: 100vh;
 }
 
-img {
-  width: 100%;
-  height: 100%;
-}
-
 header {
   display: flex;
   flex-direction: row;
   width: 100%;
   height: 10vh;
   border: 1px solid rgb(0, 0, 0);
+  align-items: center;
+  cursor: pointer;
+  font-size: x-large;
   column-gap: 5%;
   margin-bottom: 5%;
 }
@@ -36,55 +34,9 @@ header {
   width: 10vh;
 }
 
-.popup-reservation-container {
-  display: none;
-  flex-direction: column;
-  background-color: white;
-  color: black;
+img {
   width: 100%;
-  height: 100vh;
-  position: fixed;
-  padding: 1vh;
-  border: 2px solid rgb(0, 0, 0);
-}
-
-.reservation-container-appear {
-  display: flex;
-  align-items: center;
-}
-
-.reservation-page-close-btn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-left: 95%;
-  font-size: large;
-  border: 1px solid black;
-  width: 5vh;
-  height: 5vh;
-  cursor: pointer;
-}
-
-.popup-reservation-img-div {
-  width: 60vh;
-  height: 40vh;
-}
-
-.reservations {
-  height: 18vh;
-  border: 1px solid rgb(2, 2, 2);
-}
-
-.popup-reservation-container form {
-  display: flex;
-  flex-direction: column;
-  width: 40vh;
-  margin-top: 2vh;
-}
-
-.popup-reservation-container form input {
-  margin-bottom: 2vh;
-  padding: 2.5px 0 2.5px 5px;
+  height: 100%;
 }
 
 footer {
@@ -96,8 +48,6 @@ footer {
   margin-top: 10vh;
   border: 1px solid rgb(0, 0, 0);
 }
-
-/* js classes */
 
 .meal-img {
   width: 100%;
@@ -184,6 +134,16 @@ footer {
 .img-large {
   height: 30vh;
   width: 60%;
+}
+
+input {
+  display: block;
+  width: 60%;
+  margin: auto;
+  margin-bottom: 15px;
+  height: 30px;
+  padding: 3px;
+  font-size: 18px;
 }
 
 .submitBtn {

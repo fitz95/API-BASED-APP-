@@ -11,7 +11,6 @@ const ui = (data, likeNbrs = []) => {
       }
       const li = document.createElement('li');
       li.className = 'meal-container';
-      li.id = `${index}`;
       const image = document.createElement('img');
       const src = meal.strMealThumb;
       image.className = 'meal-img';
