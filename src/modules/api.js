@@ -2,8 +2,7 @@ import ui from './ui.js';
 
 const id = 'tKVlvnEbmf4TMWB77SE7';
 const urlMealrecipe = 'https://www.themealdb.com/api/json/v1/1/lookup.php?i=';
-const urlAllMeals =
-  'https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood';
+const urlAllMeals = 'https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood';
 const invApiUrl = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${id}/likes`;
 export const ides = ['52959', '52819', '52944', '53043', '52802', '52918'];
 
@@ -27,7 +26,7 @@ const postReservations = async (data) => {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data),
-      }
+      },
     );
     // eslint-disable-next-line no-empty
   } catch (error) {}
@@ -41,7 +40,7 @@ const getReservations = async (id) => {
       `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/tKVlvnEbmf4TMWB77SE7/reservations?item_id=${ID}`,
       {
         method: 'Get',
-      }
+      },
     );
     const res = await reservation.json();
     return res;
@@ -57,7 +56,7 @@ const getStrInstruction = async (id) => {
       `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${ID}`,
       {
         method: 'Get',
-      }
+      },
     );
     const res = await reservation.json();
     return res.meals[0];
@@ -97,7 +96,7 @@ const getComment = async (id) => {
     `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/tKVlvnEbmf4TMWB77SE7/comments?item_id=${id}`,
     {
       method: 'Get',
-    }
+    },
   );
   const commentsResponse = await comments.json();
   return commentsResponse;
