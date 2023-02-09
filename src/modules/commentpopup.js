@@ -80,8 +80,7 @@ const getRecipe = async (id) => {
   });
   // const displayedcomments = commentDisplay(id);
   // console.log(displayedcomments);
-  const commentUrl =
-    'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/tKVlvnEbmf4TMWB77SE7/comments?item_id=';
+  const commentUrl = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/tKVlvnEbmf4TMWB77SE7/comments?item_id=';
   const commentDisplay = async (id) => {
     const url = commentUrl + id;
     const response = await fetch(url, {
@@ -114,7 +113,7 @@ const getRecipe = async (id) => {
           username: commentName.value,
           comment: commentText.value,
         }),
-      }
+      },
     );
     form.reset();
     return response;

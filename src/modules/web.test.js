@@ -2,6 +2,7 @@
  * @jest-environment jsdom
  */
 import calMeals from './calmeals.js';
+
 describe('test Items counter', () => {
   //* *************************** Test 1-6 *************************************
   //                    Add and Remove functionality
@@ -39,7 +40,7 @@ describe('test Items counter', () => {
       <li class="meal-container"></li>
       </ul > `;
     const meals = document.querySelector('.meals');
-    meals.innerHTML += `<li class="meal-container"></li>`;
+    meals.innerHTML += '<li class="meal-container"></li>';
     expect(calMeals()).toBe(5);
   });
 
