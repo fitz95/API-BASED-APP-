@@ -1,11 +1,11 @@
 const meals = document.querySelector('.meals');
 
-export const ui = (data) => {
+const ui = (data) => {
   meals.innerHTML = '';
   data.forEach((meal, index) => {
     if (index <= 5) {
       if (meal.strMeal.length > 25) {
-        meal.strMeal = meal.strMeal.substring(0, 15) + '...';
+        meal.strMeal = `${meal.strMeal.substring(0, 15)}...`;
       }
       const li = document.createElement('li');
       li.className = 'meal-container';
@@ -36,7 +36,7 @@ export const ui = (data) => {
 
       const comBtn = document.createElement('button');
       comBtn.className = 'comBtn';
-      comBtn.id = meal.idMeal
+      comBtn.id = meal.idMeal;
       comBtn.innerHTML = 'Comments';
 
       const resBtn = document.createElement('button');
@@ -52,3 +52,4 @@ export const ui = (data) => {
   });
 };
 
+export default ui;
