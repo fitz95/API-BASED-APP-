@@ -78,7 +78,7 @@ img {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 100%;
+  width: 110vh;
 }
 
 p {
@@ -97,6 +97,12 @@ p {
   overflow-y: scroll;
   border: 1px solid rgb(2, 2, 2);
   padding: 0 0 0 10px;
+}
+
+.reservations {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .popup-reservation-container form {
@@ -246,4 +252,8 @@ footer {
   text-align: left;
   padding: 4px;
   height: 100px;
+}
+
+.byName {
+  margin-left: 5px;
 }
