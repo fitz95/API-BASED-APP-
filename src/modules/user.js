@@ -1,8 +1,6 @@
 import getRecipe from './commentpopup.js';
 import commentDisplay from './commentdisplay.js';
-import {
-  getMealsInfo, addLike, getComment,
-} from './api.js';
+import { getMealsInfo, addLike, getComment } from './api.js';
 
 const meals = document.querySelector('.meals');
 window.addEventListener('load', () => {
