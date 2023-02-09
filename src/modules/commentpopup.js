@@ -37,42 +37,6 @@ const getRecipe = async (id) => {
   popupContent.appendChild(paragraph);
   const categoryP = document.createElement('p');
   categoryP.innerHTML = `Category:   ${meal.meals[0].strCategory}`;
-const popup = document.getElementById('popup');
-const urlMealrecipe = 'https://www.themealdb.com/api/json/v1/1/lookup.php?i=';
-const getRecipe = async (id) => {
-  const url = urlMealrecipe + id;
-  const comments = await fetch(url, {
-    method: 'Get',
-  });
-  const meal = await comments.json();
-  popupContent.innerHTML = '';
-  const closeBtn = document.createElement('i');
-  closeBtn.className = 'closeBtn fa fa-times fa-4x';
-  closeBtn.id = meal.meals[0].idMeal;
-  popupContent.appendChild(closeBtn);
-  const image = document.createElement('img');
-  const src = meal.meals[0].strMealThumb;
-  image.className = 'img-large';
-  image.src = src;
-  popupContent.appendChild(image);
-  const heading = document.createElement('h3');
-  heading.className = 'heading';
-  heading.innerHTML = meal.meals[0].strMeal;
-  popupContent.appendChild(heading);
-  const detailDiv = document.createElement('div');
-  detailDiv.className = 'detail-flex';
-  popupContent.appendChild(detailDiv);
-  const areaP = document.createElement('p');
-  areaP.innerHTML = `Area:    ${meal.meals[0].strArea}`;
-  const paragraph = document.createElement('p');
-  // if (meal.meals[0].strInstructions.length > 500) {
-  //   meal.meals[0].strInstructions = meal.meals[0].strInstructions.substring(0,500) + '...';
-  // }
-  paragraph.className = 'recipe';
-  paragraph.innerHTML = meal.meals[0].strInstructions;
-  popupContent.appendChild(paragraph);
-  const categoryP = document.createElement('p');
-  categoryP.innerHTML = `Category:   ${meal.meals[0].strCategory}`;
 
   detailDiv.appendChild(areaP);
   detailDiv.appendChild(categoryP);
