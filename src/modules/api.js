@@ -2,11 +2,10 @@ import ui from './ui.js';
 
 const urlAllMeals = 'https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood';
 const urlMealrecipe = 'https://www.themealdb.com/api/json/v1/1/lookup.php?i=';
-const getMeals = async () => {
 const id = 'tKVlvnEbmf4TMWB77SE7';
 const invApiUrl = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${id}/likes`;
-export const ides = ['52959', '52819', '52944', '53043', '52802', '52918'];
-export const getLikes = async () => {
+const ides = ['52959', '52819', '52944', '53043', '52802', '52918'];
+const getLikes = async () => {
   try {
     const allLikes = await fetch(invApiUrl, {
       method: 'Get',
@@ -26,7 +25,7 @@ const getMealsInfo = async () => {
   ui(meals.meals, likes);
 };
 
- const addLike = async (index) => {
+const addLike = async (index) => {
   try {
     const userPost = await fetch(invApiUrl, {
       method: 'POST',
@@ -59,4 +58,6 @@ const getComment = async (id) => {
   return commentsResponse;
 };
 
-export { getMeals, getComment, getRecipe, addLike, getMealsInfo  };
+export {
+  ides, getComment, getRecipe, addLike, getMealsInfo, getLikes,
+};
