@@ -1,11 +1,11 @@
 import ui from './ui.js';
 
-const id = 'tKVlvnEbmf4TMWB77SE7';
 const urlAllMeals = 'https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood';
+const urlMealrecipe = 'https://www.themealdb.com/api/json/v1/1/lookup.php?i=';
+const id = 'tKVlvnEbmf4TMWB77SE7';
 const invApiUrl = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${id}/likes`;
-export const ides = ['52959', '52819', '52944', '53043', '52802', '52918'];
-
-export const getLikes = async () => {
+const ides = ['52959', '52819', '52944', '53043', '52802', '52918'];
+const getLikes = async () => {
   try {
     const allLikes = await fetch(invApiUrl, {
       method: 'Get',
@@ -16,7 +16,7 @@ export const getLikes = async () => {
   }
 };
 
-export const getMealsInfo = async () => {
+const getMealsInfo = async () => {
   const allMeals = await fetch(urlAllMeals, {
     method: 'Get',
   });
@@ -25,7 +25,7 @@ export const getMealsInfo = async () => {
   ui(meals.meals, likes);
 };
 
-export const addLike = async (index) => {
+const addLike = async (index) => {
   try {
     const userPost = await fetch(invApiUrl, {
       method: 'POST',
@@ -40,4 +40,24 @@ export const addLike = async (index) => {
   } catch (error) {
     return error;
   }
+};
+
+const getRecipe = async (id) => {
+  const url = urlMealrecipe + id;
+  const comments = await fetch(url, {
+    method: 'Get',
+  });
+  const commentsResponse = await comments.json();
+  return commentsResponse;
+};
+const getComment = async (id) => {
+  const comments = await fetch(`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/tKVlvnEbmf4TMWB77SE7/comments?item_id=${id}`, {
+    method: 'Get',
+  });
+  const commentsResponse = await comments.json();
+  return commentsResponse;
+};
+
+export {
+  ides, getComment, getRecipe, addLike, getMealsInfo, getLikes,
 };
