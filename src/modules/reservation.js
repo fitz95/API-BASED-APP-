@@ -1,6 +1,6 @@
 import Object from './resObj.js';
 
-import { getStrInstruction, getReservations, postReservations } from './api.js';
+const API = require('./api.js');
 
 const popupContainer = document.querySelector('.container');
 const resPageCloseBtn = document.querySelector('.reservation-page-close-btn');
@@ -51,7 +51,7 @@ meals.addEventListener('click', async (event) => {
     startDate.value = '';
     endDate.value = '';
     index = parseInt(event.target.parentElement.id, 10);
-    const meals = await getStrInstruction(index);
+    const meals = await API.getStrInstruction(index);
     const ID = event.target.id;
     popupContainer.classList.add('container-appear');
     const resPageImg = new Image();
@@ -62,7 +62,7 @@ meals.addEventListener('click', async (event) => {
     category.innerHTML = `Category: ${meals.strCategory}`;
     instruction.innerHTML = meals.strInstructions;
     name.innerHTML = array[ID].strMeal;
-    const reservation = await getReservations(index);
+    const reservation = await API.getReservations(index);
     element(reservation);
   }
 });
@@ -72,19 +72,15 @@ resPageCloseBtn.addEventListener('click', () => {
 });
 
 document.querySelector('.form-btn').addEventListener('click', async () => {
-  if (
-    nameInput.value !== '' &&
-    startDate.value !== '' &&
-    endDate.value !== ''
-  ) {
+  if (nameInput.value !== '' && startDate.value !== '' && endDate.value !== '') {
     const obj = new Object(
       index,
       nameInput.value,
       startDate.value,
-      endDate.value
+      endDate.value,
     );
-    await postReservations(obj);
-    const reservation = await getReservations(index);
+    await API.postReservations(obj);
+    const reservation = await API.getReservations(index);
     element(reservation);
     nameInput.value = '';
     startDate.value = '';

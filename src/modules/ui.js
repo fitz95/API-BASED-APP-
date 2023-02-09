@@ -3,7 +3,6 @@ import calMeals from './calmeals.js';
 const meals = document.querySelector('.meals');
 const mealsCounter = document.querySelector('.meals-counter');
 
-
 const ui = (data, likeNbrs = []) => {
   meals.innerHTML = '';
   data.forEach((meal, index) => {

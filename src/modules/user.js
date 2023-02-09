@@ -1,4 +1,5 @@
 import { getMealsInfo, addLike } from './api.js';
+
 const meals = document.querySelector('.meals');
 
 window.addEventListener('load', () => {
