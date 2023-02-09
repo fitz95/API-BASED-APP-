@@ -1,11 +1,12 @@
 import ui from './ui.js';
 import resBtn from './reservation.js';
 const id = 'tKVlvnEbmf4TMWB77SE7';
-const urlAllMeals = 'https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood';
+const urlAllMeals =
+  'https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood';
 const invApiUrl = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${id}/likes`;
 export const ides = ['52959', '52819', '52944', '53043', '52802', '52918'];
 
-export const getLikes = async () => {
+const getLikes = async () => {
   try {
     const allLikes = await fetch(invApiUrl, {
       method: 'Get',
@@ -19,23 +20,28 @@ export const getLikes = async () => {
 const postReservations = async (data) => {
   let reservation = '';
   try {
-    reservation = await fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/tKVlvnEbmf4TMWB77SE7/reservations/', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(data),
-    });
-  // eslint-disable-next-line no-empty
-  } catch (error) {
-  }
+    reservation = await fetch(
+      'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/tKVlvnEbmf4TMWB77SE7/reservations/',
+      {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      }
+    );
+    // eslint-disable-next-line no-empty
+  } catch (error) {}
   return reservation;
 };
 
 const getReservations = async (id) => {
   const ID = id.toString();
   try {
-    const reservation = await fetch(`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/tKVlvnEbmf4TMWB77SE7/reservations?item_id=${ID}`, {
-      method: 'Get',
-    });
+    const reservation = await fetch(
+      `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/tKVlvnEbmf4TMWB77SE7/reservations?item_id=${ID}`,
+      {
+        method: 'Get',
+      }
+    );
     const res = await reservation.json();
     return res;
   } catch (error) {
@@ -46,9 +52,12 @@ const getReservations = async (id) => {
 const getStrInstruction = async (id) => {
   const ID = id.toString();
   try {
-    const reservation = await fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=$%7BID%7D%60, {
-      method: 'Get',
-    });
+    const reservation = await fetch(
+      `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${ID}`,
+      {
+        method: 'Get',
+      }
+    );
     const res = await reservation.json();
     return res.meals[0];
   } catch (error) {
@@ -63,6 +72,8 @@ const getMealsInfo = async () => {
   const likes = await getLikes();
   const meals = await allMeals.json();
   ui(meals.meals, likes);
+  resBtn(meals.meals);
+  return;
 };
 
 const addLike = async (index) => {
@@ -83,5 +94,10 @@ const addLike = async (index) => {
 };
 
 export {
-  getMeals, postReservations, getReservations, getStrInstruction,
+  postReservations,
+  getReservations,
+  getStrInstruction,
+  getMealsInfo,
+  addLike,
+  getLikes,
 };
