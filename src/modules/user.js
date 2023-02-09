@@ -1,20 +1,35 @@
-import { getMeals, getComment  }  from './api.js';
+import {
+  getMeals, getComment, getMealsInfo, addLike,
+} from './api.js';
+import getRecipe from './commentpopup.js';
+import commentDisplay from './commentdisplay.js';
 
 const meals = document.querySelector('.meals');
+
 window.addEventListener('load', () => {
+  getMealsInfo();
   getMeals();
 });
 
-const comBtn = document.querySelectorAll('comBtn');
+meals.addEventListener('click', async (e) => {
+  // trash icon
+  if (e.target.closest('.like-icon')) {
+    const likeText = e.target.closest('.like-icon').nextElementSibling;
+    const likeIcon = e.target.closest('.like-icon');
+    const { id } = likeText;
+    addLike(id);
+    const likeNbr = parseInt(likeText.innerHTML, 10) + 1;
+    likeText.innerHTML = `${likeNbr} likes`;
+    likeIcon.className = 'fa fa-heart';
+  }
+});
 
 meals.addEventListener('click', (e) => {
-  if(e.target.closest('.comBtn')) {
+  if (e.target.closest('.comBtn')) {
     const btn = e.target;
-    const {id} = btn;
-    console.log(typeof(id));
-    console.log(id);
-    // console.log('click');
-    // console.log(id.type);
+    const { id } = btn;
     getComment(id);
+    getRecipe(id);
+    commentDisplay(id);
   }
-})
+});

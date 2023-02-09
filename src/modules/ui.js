@@ -1,11 +1,14 @@
-const meals = document.querySelector('.meals');
+import calMeals from './calmeals.js';
 
-export const ui = (data) => {
+const meals = document.querySelector('.meals');
+const mealsCounter = document.querySelector('.meals-counter');
+
+const ui = (data, likeNbrs = []) => {
   meals.innerHTML = '';
   data.forEach((meal, index) => {
     if (index <= 5) {
       if (meal.strMeal.length > 25) {
-        meal.strMeal = meal.strMeal.substring(0, 15) + '...';
+        meal.strMeal = `${meal.strMeal.substring(0, 15)}...`;
       }
       const li = document.createElement('li');
       li.className = 'meal-container';
@@ -23,10 +26,11 @@ export const ui = (data) => {
       const likeDiv = document.createElement('div');
       likeDiv.className = 'like';
       const heartIcon = document.createElement('i');
-      heartIcon.className = 'fa fa-heart';
+      heartIcon.className = 'fa fa-heart-o like-icon';
       const likeTxt = document.createElement('h7');
       likeTxt.className = 'like-txt';
-      likeTxt.innerHTML = '5 likes';
+      likeTxt.innerHTML = `${likeNbrs[index].likes} likes`;
+      likeTxt.id = index;
 
       likeDiv.appendChild(heartIcon);
       likeDiv.appendChild(likeTxt);
@@ -36,7 +40,7 @@ export const ui = (data) => {
 
       const comBtn = document.createElement('button');
       comBtn.className = 'comBtn';
-      comBtn.id = meal.idMeal
+      comBtn.id = meal.idMeal;
       comBtn.innerHTML = 'Comments';
 
       const resBtn = document.createElement('button');
@@ -50,5 +54,8 @@ export const ui = (data) => {
       meals.appendChild(li);
     }
   });
+
+  mealsCounter.innerHTML = `Meals(${calMeals()})`;
 };
 
+export default ui;
