@@ -2,6 +2,7 @@ import ui from './ui.js';
 import resBtn from './reservation.js';
 
 const id = 'tKVlvnEbmf4TMWB77SE7';
+const urlMealrecipe = 'https://www.themealdb.com/api/json/v1/1/lookup.php?i=';
 const urlAllMeals = 'https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood';
 const invApiUrl = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${id}/likes`;
 export const ides = ['52959', '52819', '52944', '53043', '52802', '52918'];
@@ -103,12 +104,20 @@ const getComment = async (id) => {
   return commentsResponse;
 };
 
+const getRecipe = async (id) => {
+  const url = urlMealrecipe + id;
+  const comments = await fetch(url, {
+    method: 'Get',
+  });
+
+
 export {
+  getComment,
+  getRecipe,
   postReservations,
   getReservations,
   getStrInstruction,
   getMealsInfo,
   addLike,
   getLikes,
-  getComment,
 };
