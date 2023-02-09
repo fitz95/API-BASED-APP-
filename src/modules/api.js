@@ -92,6 +92,17 @@ const addLike = async (index) => {
   }
 };
 
+const getComment = async (id) => {
+  const comments = await fetch(
+    `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/tKVlvnEbmf4TMWB77SE7/comments?item_id=${id}`,
+    {
+      method: 'Get',
+    },
+  );
+  const commentsResponse = await comments.json();
+  return commentsResponse;
+};
+
 export {
   postReservations,
   getReservations,
@@ -99,4 +110,5 @@ export {
   getMealsInfo,
   addLike,
   getLikes,
+  getComment,
 };
