@@ -20,51 +20,63 @@ img {
   height: 100%;
 }
 
-.reservations-conatainer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
 .popup-reservation-container {
   display: none;
   flex-direction: column;
-  background-color: rgba(255, 255, 255, 0.935);
+  background-color: rgba(255, 255, 255, 0.961);
   color: black;
-  width: 95%;
-  height: 95vh;
-  position: fixed;
   padding: 1vh;
   border: 2px solid rgb(0, 0, 0);
-  margin: 3vh;
+  position: relative;
+  position: fixed;
+  margin: 1vh;
 }
 
 .reservation-container-appear {
   display: flex;
   align-items: center;
+  align-self: center;
 }
 
 .reservation-page-close-btn {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: 95%;
+  margin-left: 94%;
   font-size: large;
   border: 1px solid black;
   width: 5vh;
   height: 5vh;
   cursor: pointer;
+  position: absolute;
 }
 
 .popup-reservation-img-div {
-  width: 60vh;
-  height: 40vh;
+  width: 50vh;
+  height: 30vh;
+}
+
+.name-inst-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+p {
+  font-size: 11px;
+}
+
+.reservations-conatainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .reservations-div {
-  height: 18vh;
+  height: 11vh;
   overflow-y: scroll;
   border: 1px solid rgb(2, 2, 2);
+  padding: 0 0 0 10px;
 }
 
 .popup-reservation-container form {
@@ -75,7 +87,7 @@ img {
 }
 
 .popup-reservation-container form input {
-  margin-bottom: 2vh;
+  margin-bottom: 1vh;
   padding: 2.5px 0 2.5px 5px;
 }
 

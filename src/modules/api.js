@@ -30,6 +30,19 @@ const getReservations = async (id) => {
   }
 };
 
+const getStrInstruction = async (id) => {
+  const ID = id.toString();
+  try {
+    const reservation = await fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${ID}`, {
+      method: 'Get',
+    });
+    const res = await reservation.json();
+    return res.meals[0].strInstructions;
+  } catch (error) {
+    return error;
+  }
+};
+
 const getMeals = async () => {
   const allMeals = await fetch(urlAllMeals, {
     method: 'Get',
@@ -40,4 +53,6 @@ const getMeals = async () => {
   return meals;
 };
 
-export { getMeals, postReservations, getReservations };
+export {
+  getMeals, postReservations, getReservations, getStrInstruction,
+};

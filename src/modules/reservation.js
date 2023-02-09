@@ -6,15 +6,8 @@ const popupRes = document.querySelector('.popup-reservation-container');
 const resPageCloseBtn = document.querySelector('.reservation-page-close-btn');
 const popupResImgDiv = document.querySelector('.popup-reservation-img-div');
 const name = document.querySelector('.name');
+const instruction = document.querySelector('.instructions');
 const meals = document.querySelector('.meals');
-
-let array = [];
-
-const resBtn = (data) => {
-  array = data;
-};
-
-let index = '';
 
 const element = (data) => {
   document.querySelector('.reservations-div').innerHTML = '';
@@ -23,13 +16,13 @@ const element = (data) => {
     data.forEach((element) => {
       const div = document.createElement('div');
       div.classList = 'reservations';
-      const startDate = document.createElement('h2');
+      const startDate = document.createElement('h4');
       startDate.innerHTML = element.date_start;
-      const endDate = document.createElement('h2');
+      const endDate = document.createElement('h4');
       endDate.innerHTML = `~${element.date_end}`;
-      const name = document.createElement('h2');
+      const name = document.createElement('h3');
       name.classList = 'byName';
-      name.innerHTML = `by "${element.username}"`;
+      name.innerHTML = `by ${element.username}`;
       div.append(startDate, endDate, name);
       document.querySelector('.reservations-div').appendChild(div);
     });
@@ -38,15 +31,32 @@ const element = (data) => {
   }
 };
 
+const nameInput = document.querySelector('.Your-name');
+const startDate = document.querySelector('.start-date');
+const endDate = document.querySelector('.end-date');
+
+let index = '';
+
+let array = [];
+
+const resBtn = (data) => {
+  array = data;
+};
+
 meals.addEventListener('click', async (event) => {
   if (event.target.className === 'resBtn') {
+    nameInput.value = '';
+    startDate.value = '';
+    endDate.value = '';
     index = parseInt(event.target.parentElement.id, 10);
+    const instructions = await API.getStrInstruction(index);
     const ID = event.target.id;
     popupRes.classList.add('reservation-container-appear');
     const resPageImg = new Image();
     resPageImg.src = array[ID].strMealThumb;
     popupResImgDiv.innerHTML = '';
     popupResImgDiv.append(resPageImg);
+    instruction.innerHTML = instructions;
     name.innerHTML = array[ID].strMeal;
     const reservation = await API.getReservations(index);
     element(reservation);
@@ -56,10 +66,6 @@ meals.addEventListener('click', async (event) => {
 resPageCloseBtn.addEventListener('click', (() => {
   popupRes.classList.remove('reservation-container-appear');
 }));
-
-const nameInput = document.querySelector('.Your-name');
-const startDate = document.querySelector('.start-date');
-const endDate = document.querySelector('.end-date');
 
 document.querySelector('.form-btn').addEventListener('click', (async () => {
   if (nameInput.value !== '' && startDate.value !== '' && endDate.value !== '') {
