@@ -4,7 +4,8 @@
   "description": "",
   "private": true,
   "scripts": {
-    "test": "jest --coverage",
+    "test": "jest --env=jsdom --coverage",
+    "test:watch": "jest --watch --env=jsdom",
     "start": "webpack serve --open",
     "build": "webpack"
   },
@@ -33,6 +34,7 @@
     "html-webpack-plugin": "^5.5.0",
     "jest": "^29.3.1",
     "jest-environment-jsdom": "^28.1.1",
+    "jest-fetch-mock": "^3.0.3",
     "style-loader": "^3.3.1",
     "stylelint": "^13.13.1",
     "stylelint-config-standard": "^21.0.0",
