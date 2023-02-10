@@ -16,7 +16,9 @@ body {
 }
 
 .background {
-  background-image: url('./assets/image/image3.jpg');
+  background-image: 
+  linear-gradient( to bottom, rgba(190, 158, 202, 0.60), rgba(225, 238, 239, 0.80)),
+  url('./assets/image/image3.jpg');
   background-size: 100% 100%;
   background-repeat: no-repeat;
 }
@@ -62,7 +64,7 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: 94%;
+  margin-left: 90%;
   width: 5vh;
   height: 5vh;
   cursor: pointer;
@@ -301,4 +303,36 @@ footer {
   height: 100%;
   width: 100%;
   display: none;
+}
+
+.comBtn,
+.resBtn {
+  align-items: center;
+  background-image: linear-gradient(144deg, #af40ff, #5b42f3 50%, #00ddeb);
+  border: 0;
+  border-radius: 8px;
+  box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+  box-sizing: border-box;
+  color: #fff;
+  display: flex;
+  font-family: Phantomsans, sans-serif;
+  font-size: 20px;
+  justify-content: center;
+  line-height: 1em;
+  max-width: 100%;
+  min-width: 140px;
+  padding: 8px 24px;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.comBtn:active,
+.resBtn:active,
+.comBtn:hover,
+.resBtn:hover {
+  outline: 0;
 }
