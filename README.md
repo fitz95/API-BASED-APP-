@@ -24,14 +24,10 @@
   - [🙏 Acknowledgments ](#-acknowledgments-)
   - [📝 License ](#-license-)
 
-# 🎥 Movie Web app<a name="about-project"></a>
+# 🎥 Moanfi Restaurant <a name="about-project"></a>
 
-*tittle* is a web app that allows you to ... 
-
-Here are some features of the page:
-
-Add your likes and comments on your web app.
-
+MoanFi restaurant is an app that let users chose a meal form its rich and diverse
+ gastronomical  selection of meals. It allows users to chose and get details on meal region and originated area. As well as oppurtunitu to reserve for a meal at a particular date and see which meals ahve been reserved. 
 
 ## 🛠 Built With <a name="built-with"></a>
     HTML
@@ -39,13 +35,18 @@ Add your likes and comments on your web app.
     Javascript
     Webpack
 
+### Key Features <a name="key-features"></a>
+
+- **Add Reservation**
+- **Add Comment**
+- **Like a Meal**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-none
+You would be able see later a Live Version of this Leader board app deployed with Github pages below
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -94,17 +95,56 @@ Clone this repository to your desired folder:[Add link]
 
 - Make sure to intall all dependencies by running 'npm install'
 
+### Install
+
+Install this project with:
+
+cd my-project
+and then clone
+Install dependencies
+install webpack
+
+### Usage
+
+To run the project, execute the following command:
+
+clone, extract and use
+
+### Run tests
+
+To run tests use Linters
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 👤**Authors** <a name="authors"></a>
-<h4>Bernabas yosef</h4>
+
+👤 **Author1**
+
+- GitHub: [@githubhandle](https://github.com/fitz95/)
+- Twitter: [@twitterhandke](https://twitter.com/nsonggerald/)
+- linkedIn: [@linkedinhandle](https://www.linkedin.com/in/nsong-asoh/)
+
+👤 **Author2**
 
  GitHub: [@githubhandle](https://github.com/bernabasy)
  LinkedIn: [LinkedIn](https://www.linkedin.com/in/bernabas-yosef-74b571186)
 Twitter: [twitter](https://twitter.com/bernabasjosef) 
 
+👤 **Author3**
+
+- GitHub: [@githubhandle](https://github.com/(https://github.com/huzaifakhan0308/)
+- Twitter: [@twitterhandke](https://twitter.com/huzaifakhan0308/)
+- linkedIn: [@linkedinhandle](https://www.linkedin.com/in/huzaifa-khan-938140256/)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 🔭 Future Features <a name="future-features"></a>
+
+- [ ] **[Sign In amd Sign Out]**
+- [ ] **[Multiple Pages]**
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -129,6 +169,6 @@ Give a ⭐️ if you like this project!
 
 ## 📝 License <a name="license"></a>
 
-This project is [MIT](https://github.com/bernabasy/webpack-Templet/blob/main/LICENSE)licensed.
+This project is [MIT](./LICENSE) licensed.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
