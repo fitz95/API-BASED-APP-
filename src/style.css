@@ -84,12 +84,11 @@ img {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 110vh;
+  width: 80vh;
 }
 
 p {
   font-size: 15px;
-  width: 70vh;
 }
 
 .reservations-conatainer {
@@ -197,8 +196,7 @@ footer {
 .popup {
   display: none;
   position: fixed;
-  background: #fff;
-  opacity: 0.9;
+  background: #ffffffe6;
   width: 85%;
   height: 85%;
   z-index: 200;
@@ -216,27 +214,27 @@ footer {
   height: 25px;
   width: 25px;
   cursor: pointer;
-  margin-right: 10px;
+  margin-left: 90%;
 }
 
 .popupcontent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: 25px;
   font-size: larger;
-  padding-left: 10%;
-  margin: auto;
   text-align: center;
-
-  /* margin-left: 10%; */
 }
 
 .detail-flex {
   display: flex;
   justify-content: space-around;
+  width: 100%;
   margin-bottom: 20px;
 }
 
 .recipe {
-  width: 60%;
+  width: 80vh;
   font-size: 18px;
   margin: auto;
 }
@@ -248,8 +246,8 @@ footer {
 }
 
 .img-large {
+  width: 50vh;
   height: 30vh;
-  width: 60%;
 }
 
 .submitBtn {
@@ -260,23 +258,25 @@ footer {
 }
 
 #commentDiv {
-  margin: auto;
+  display: flex;
   max-height: 100px;
-  overflow-y: auto;
-  overflow-x: hidden;
-  width: 48%;
+  overflow-y: scroll;
   font-size: large;
-  text-align: center;
+  border: 1px solid black;
+}
+
+.commentChild-P {
+  display: flex;
+  padding-left: 5px;
 }
 
 .inputstyle {
   display: block;
-  width: 60%;
   margin: auto;
+  width: 50vh;
   margin-bottom: 15px;
-  height: 30px;
-  padding: 3px;
-  font-size: 18px;
+  font-size: 15px;
+  padding: 2.5px 0 2.5px 5px;
 }
 
 .commentText {
