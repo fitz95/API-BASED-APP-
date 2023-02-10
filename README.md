@@ -47,7 +47,8 @@ gastronomical selection of meals. It allows users to chose and get details on me
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-You would be able see later a Live Version of this Leader board app deployed with Github pages below
+You would be able see later a Live Version of this App Below
+ https://fitz95.github.io/API-BASED-APP-/
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -124,9 +125,9 @@ To run tests use Linters
 
 👤 **Author2**
 
-GitHub: [@githubhandle](https://github.com/bernabasy)
-LinkedIn: [LinkedIn](https://www.linkedin.com/in/bernabas-yosef-74b571186)
-Twitter: [twitter](https://twitter.com/bernabasjosef)
+- GitHub: [@mohisa302](https://github.com/mohisa302)
+- Twitter: [@Kholochelam](https://twitter.com/Kholochelam)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/mohadese-sadeghi-692551199/)
 
 👤 **Author3**
 
@@ -140,7 +141,7 @@ Twitter: [twitter](https://twitter.com/bernabasjosef)
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **[Sign In amd Sign Out]**
+- [ ] **[Sign In and Sign Out]**
 - [ ] **[Multiple Pages]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
