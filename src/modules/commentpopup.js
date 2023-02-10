@@ -95,6 +95,7 @@ const getRecipe = async (id) => {
       p.innerHTML = `${element.creation_date}  ${element.username}: ${element.comment}`;
       div.appendChild(p);
     });
+    subHeading.innerHTML = `Comments (${comments.length})`;
     commentsDiv.appendChild(div);
     subHeading.innerHTML = `Comments(${comments.length})`;
   };
