@@ -58,10 +58,10 @@ meals.addEventListener('click', async (event) => {
     resPageImg.src = array[ID].strMealThumb;
     popupResImgDiv.innerHTML = '';
     popupResImgDiv.append(resPageImg);
+    name.innerHTML = array[ID].strMeal;
     area.innerHTML = `Area: ${meals.strArea}`;
     category.innerHTML = `Category: ${meals.strCategory}`;
     instruction.innerHTML = meals.strInstructions;
-    name.innerHTML = array[ID].strMeal;
     const reservation = await API.getReservations(index);
     element(reservation);
   }
