@@ -98,6 +98,7 @@ const getRecipe = async (id) => {
     div.className = 'commentdivstyle';
     comments.forEach((element) => {
       const p = document.createElement('p');
+      p.classList = 'commentChild-P';
       p.innerHTML = `${element.creation_date}  ${element.username}: ${element.comment}`;
       div.appendChild(p);
     });

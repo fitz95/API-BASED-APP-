@@ -1,10 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Combo&family=Poppins&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Combo&family=Poppins&display=swap');
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 html {
@@ -13,6 +13,12 @@ html {
 
 body {
   height: 100vh;
+}
+
+.background {
+  background-image: url('./assets/image/image3.jpg');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
 }
 
 img {
@@ -78,12 +84,11 @@ img {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 110vh;
+  width: 80vh;
 }
 
 p {
   font-size: 15px;
-  width: 70vh;
 }
 
 .reservations-conatainer {
@@ -126,7 +131,9 @@ header {
   cursor: pointer;
   font-size: x-large;
   column-gap: 5%;
-  margin-bottom: 5%;
+  margin-bottom: 20px;
+  justify-items: center;
+  background-color: rgba(255, 255, 255, 0.763);
 }
 
 .meal-logo-div {
@@ -139,7 +146,6 @@ header span {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: 20vh;
   cursor: pointer;
   font-size: x-large;
 }
@@ -150,11 +156,10 @@ footer {
   align-items: center;
   width: 100%;
   height: 10vh;
-  margin-top: 10vh;
   border: 1px solid rgb(0, 0, 0);
+  background-color: rgba(255, 255, 255, 0.763);
+  margin-top: 20px;
 }
-
-/* js classes */
 
 .meal-container {
   display: flex;
@@ -191,8 +196,7 @@ footer {
 .popup {
   display: none;
   position: fixed;
-  background: #fff;
-  opacity: 0.9;
+  background: #ffffffe6;
   width: 85%;
   height: 85%;
   z-index: 200;
@@ -210,27 +214,27 @@ footer {
   height: 25px;
   width: 25px;
   cursor: pointer;
-  margin-right: 10px;
+  margin-left: 90%;
 }
 
 .popupcontent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: 25px;
   font-size: larger;
-  padding-left: 10%;
-  margin: auto;
   text-align: center;
-
-  /* margin-left: 10%; */
 }
 
 .detail-flex {
   display: flex;
   justify-content: space-around;
+  width: 100%;
   margin-bottom: 20px;
 }
 
 .recipe {
-  width: 60%;
+  width: 80vh;
   font-size: 18px;
   margin: auto;
 }
@@ -242,8 +246,8 @@ footer {
 }
 
 .img-large {
+  width: 50vh;
   height: 30vh;
-  width: 60%;
 }
 
 .submitBtn {
@@ -254,22 +258,25 @@ footer {
 }
 
 #commentDiv {
-  margin: auto;
+  display: flex;
   max-height: 100px;
-  overflow-y: auto;
-  overflow-x: hidden;
-  width: 48%;
+  overflow-y: scroll;
   font-size: large;
+  border: 1px solid black;
+}
+
+.commentChild-P {
+  display: flex;
+  padding-left: 5px;
 }
 
 .inputstyle {
   display: block;
-  width: 60%;
   margin: auto;
+  width: 50vh;
   margin-bottom: 15px;
-  height: 30px;
-  padding: 3px;
-  font-size: 18px;
+  font-size: 15px;
+  padding: 2.5px 0 2.5px 5px;
 }
 
 .commentText {
