@@ -17,7 +17,6 @@ const getLikes = async () => {
     return error;
   }
 };
-
 const postReservations = async (data) => {
   let reservation = '';
   try {
@@ -92,6 +91,14 @@ const addLike = async (index) => {
     return error;
   }
 };
+const getRecipe = async (id) => {
+  const url = urlMealrecipe + id;
+  const comments = await fetch(url, {
+    method: 'Get',
+  });
+  const commentsResponse = await comments.json();
+  return commentsResponse;
+};
 
 const getComment = async (id) => {
   const comments = await fetch(
@@ -103,16 +110,6 @@ const getComment = async (id) => {
   const commentsResponse = await comments.json();
   return commentsResponse;
 };
-
-const getRecipe = async (id) => {
-  const url = urlMealrecipe + id;
-  const comments = await fetch(url, {
-    method: 'Get',
-  });
-  const commentsResponse = await comments.json();
-  return commentsResponse;
-};
-
 export {
   getComment,
   getRecipe,
