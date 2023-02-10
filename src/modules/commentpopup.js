@@ -14,6 +14,8 @@ const getRecipe = async (id) => {
   closeBtn.className = 'closeBtn fa fa-times fa-4x';
   closeBtn.id = meal.meals[0].idMeal;
   popupContent.appendChild(closeBtn);
+  const popupbg = document.createElement('div');
+  popupbg.className = 'popupbg';
   const image = document.createElement('img');
   const src = meal.meals[0].strMealThumb;
   image.className = 'img-large';
@@ -75,10 +77,13 @@ const getRecipe = async (id) => {
   form.appendChild(submitBtn);
   formDiv.appendChild(form);
   popupContent.appendChild(formDiv);
+  document.body.appendChild(popupbg);
   popup.style.display = 'block';
+  popupbg.style.display = 'block';
   closeBtn.addEventListener('click', (e) => {
     e.preventDefault();
     popup.style.display = 'none';
+    popupbg.style.display = 'none';
   });
   // const displayedcomments = commentDisplay(id);
   // console.log(displayedcomments);
