@@ -27,6 +27,7 @@ const getRecipe = async (id) => {
   detailDiv.className = 'detail-flex';
   popupContent.appendChild(detailDiv);
   const areaP = document.createElement('p');
+  areaP.className = 'detailstyle';
   areaP.innerHTML = `Area:    ${meal.meals[0].strArea}`;
   const paragraph = document.createElement('p');
   // if (meal.meals[0].strInstructions.length > 500) {
@@ -36,8 +37,8 @@ const getRecipe = async (id) => {
   paragraph.innerHTML = meal.meals[0].strInstructions;
   popupContent.appendChild(paragraph);
   const categoryP = document.createElement('p');
+  categoryP.className = 'detailstyle';
   categoryP.innerHTML = `Category:   ${meal.meals[0].strCategory}`;
-
   detailDiv.appendChild(areaP);
   detailDiv.appendChild(categoryP);
   const subHeading = document.createElement('h4');
@@ -56,16 +57,15 @@ const getRecipe = async (id) => {
   const form = document.createElement('form');
   form.setAttribute('method', 'post');
   const commentName = document.createElement('input');
+  commentName.className = 'inputstyle';
   commentName.setAttribute('type', 'text');
   commentName.setAttribute('id', 'commentname');
   commentName.setAttribute('placeholder', 'Your Name');
-
   const commentText = document.createElement('input');
   commentText.setAttribute('type', 'textarea');
   commentText.setAttribute('id', 'commentsubject');
   commentText.setAttribute('placeholder', 'Your Insights');
-  commentText.className = 'commentText';
-
+  commentText.className = 'inputstyle commentText';
   const submitBtn = document.createElement('input');
   submitBtn.setAttribute('type', 'submit');
   submitBtn.setAttribute('value', 'Submit');
@@ -95,8 +95,8 @@ const getRecipe = async (id) => {
       p.innerHTML = `${element.creation_date}  ${element.username}: ${element.comment}`;
       div.appendChild(p);
     });
-
-    subHeading.innerHTML = `Comments (${comments.length})`;
+    commentsDiv.appendChild(div);
+    subHeading.innerHTML = `Comments(${comments.length})`;
   };
   commentDisplay(id);
   const commentPost = async () => {
@@ -115,16 +115,14 @@ const getRecipe = async (id) => {
       }),
     });
     form.reset();
+    getRecipe(id);
     return response;
   };
-
   submitBtn.addEventListener('click', (e) => {
     e.preventDefault();
     if (commentName.value !== '' || commentText.value !== '') {
       commentPost(id);
-      getRecipe(id);
     }
   });
 };
-
 export default getRecipe;
