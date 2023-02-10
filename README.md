@@ -39,7 +39,7 @@ gastronomical selection of meals. It allows users to chose and get details on me
 ## 🚀 Live Demo <a name="live-demo"></a>
 
 You would be able see later a Live Version of this App Below
- https://fitz95.github.io/API-BASED-APP-/
+https://fitz95.github.io/API-BASED-APP-/
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -47,15 +47,17 @@ You would be able see later a Live Version of this App Below
 
 - Create a local directory that you want to clone the repository.
 
-- On the terminal navigate to the folder you created and run this command: git clone []
+- On the terminal navigate to the folder you created and run this command: `git clone https://github.com/fitz95/API-BASED-APP-.git`
 
-- Now navigate to the repository folder using command prompt cd JavaScript-Capstone-Project.
+- Now navigate to the repository folder using command prompt `cd API-BASED-APP-`.
 
 - Make sure to intall linters using this link: https://github.com/microverseinc/linters-config.
 
 - Make sure to add project dependancies ( webpack)
 
 - Run 'npm install' to add all dependencies
+
+- Run 'npm start' to run the web in your browser
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
