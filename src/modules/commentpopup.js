@@ -27,6 +27,7 @@ const getRecipe = async (id) => {
   detailDiv.className = 'detail-flex';
   popupContent.appendChild(detailDiv);
   const areaP = document.createElement('p');
+  areaP.className = 'detailstyle';
   areaP.innerHTML = `Area:    ${meal.meals[0].strArea}`;
   const paragraph = document.createElement('p');
   // if (meal.meals[0].strInstructions.length > 500) {
@@ -36,6 +37,7 @@ const getRecipe = async (id) => {
   paragraph.innerHTML = meal.meals[0].strInstructions;
   popupContent.appendChild(paragraph);
   const categoryP = document.createElement('p');
+  categoryP.className = 'detailstyle';
   categoryP.innerHTML = `Category:   ${meal.meals[0].strCategory}`;
   detailDiv.appendChild(areaP);
   detailDiv.appendChild(categoryP);
@@ -55,6 +57,7 @@ const getRecipe = async (id) => {
   const form = document.createElement('form');
   form.setAttribute('method', 'post');
   const commentName = document.createElement('input');
+  commentName.className = 'inputstyle';
   commentName.setAttribute('type', 'text');
   commentName.setAttribute('id', 'commentname');
   commentName.setAttribute('placeholder', 'Your Name');
@@ -62,7 +65,7 @@ const getRecipe = async (id) => {
   commentText.setAttribute('type', 'textarea');
   commentText.setAttribute('id', 'commentsubject');
   commentText.setAttribute('placeholder', 'Your Insights');
-  commentText.className = 'commentText';
+  commentText.className = 'inputstyle commentText';
   const submitBtn = document.createElement('input');
   submitBtn.setAttribute('type', 'submit');
   submitBtn.setAttribute('value', 'Submit');
