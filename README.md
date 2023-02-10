@@ -19,6 +19,7 @@
   - [💻 Prerequisites](#prerequisites)
   - [💻 Setup](#setup)
   - [👤**Authors** ](#authors-)
+  - [🔭 Future Features](#future-features)
   - [🤝 Contributing ](#-contributing-)
   - [⭐️ Show your support ](#️-show-your-support-)
   - [🙏 Acknowledgments ](#-acknowledgments-)
@@ -27,9 +28,10 @@
 # 🎥 Moanfi Restaurant <a name="about-project"></a>
 
 MoanFi restaurant is an app that let users chose a meal form its rich and diverse
- gastronomical  selection of meals. It allows users to chose and get details on meal region and originated area. As well as oppurtunitu to reserve for a meal at a particular date and see which meals ahve been reserved. 
+gastronomical selection of meals. It allows users to chose and get details on meal region and originated area. As well as oppurtunitu to reserve for a meal at a particular date and see which meals ahve been reserved.
 
 ## 🛠 Built With <a name="built-with"></a>
+
     HTML
     CSS
     Javascript
@@ -43,13 +45,11 @@ MoanFi restaurant is an app that let users chose a meal form its rich and divers
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
 ## 🚀 Live Demo <a name="live-demo"></a>
 
 You would be able see later a Live Version of this Leader board app deployed with Github pages below
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 ## 💻 Getting Started <a name="getting-started"></a>
 
@@ -63,7 +63,7 @@ You would be able see later a Live Version of this Leader board app deployed wit
 
 - Make sure to add project dependancies ( webpack)
 
-- Run 'npm install' to add all dependencies 
+- Run 'npm install' to add all dependencies
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -77,7 +77,6 @@ In order to run this project you need:
 
 -Any broswer
 
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### Setup
@@ -89,7 +88,6 @@ Clone this repository to your desired folder:[Add link]
 - On the terminal run this command git clone[Add link]
 
 - Go to the repository folder using command prompt cd[Add link].
-
 
 - Make sure to intall linters using this link: https://github.com/microverseinc/linters-config.
 
@@ -126,9 +124,9 @@ To run tests use Linters
 
 👤 **Author2**
 
- GitHub: [@githubhandle](https://github.com/bernabasy)
- LinkedIn: [LinkedIn](https://www.linkedin.com/in/bernabas-yosef-74b571186)
-Twitter: [twitter](https://twitter.com/bernabasjosef) 
+GitHub: [@githubhandle](https://github.com/bernabasy)
+LinkedIn: [LinkedIn](https://www.linkedin.com/in/bernabas-yosef-74b571186)
+Twitter: [twitter](https://twitter.com/bernabasjosef)
 
 👤 **Author3**
 
@@ -144,7 +142,6 @@ Twitter: [twitter](https://twitter.com/bernabasjosef)
 
 - [ ] **[Sign In amd Sign Out]**
 - [ ] **[Multiple Pages]**
-
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -163,7 +160,6 @@ Give a ⭐️ if you like this project!
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
-
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
