@@ -1,5 +1,5 @@
 // import commentDisplay from './commentdisplay.js';
-// import { getComment } from './api.js';
+// import { getComment } from './api.js'
 const popupContent = document.querySelector('.popupcontent');
 const popup = document.getElementById('popup');
 const urlMealrecipe = 'https://www.themealdb.com/api/json/v1/1/lookup.php?i=';
@@ -90,6 +90,7 @@ const getRecipe = async (id) => {
     });
     const comments = await response.json();
     const div = document.createElement('div');
+    div.className = 'commentdivstyle';
     comments.forEach((element) => {
       const p = document.createElement('p');
       p.innerHTML = `${element.creation_date}  ${element.username}: ${element.comment}`;
